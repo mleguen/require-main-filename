@@ -1,5 +1,7 @@
+const requireFoolWebpack = require('require-fool-webpack')
+
 module.exports = function (_require) {
-  _require = _require || require
+  _require = _require || requireFoolWebpack
   var main = _require.main
   if (main && isIISNode(main)) return handleIISNode(main)
   else return main ? main.filename : process.cwd()
